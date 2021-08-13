@@ -8,9 +8,14 @@ class HelloWorld {
 class Hello_Two {
   int HelloLevel = 1;
 
-  Hello_Two(int helloLevel) {
-    HelloLevel = helloLevel; 
+  Hello_Two() {
   }
+
+  Hello_Two.withLevel(int hello) {
+    HelloLevel = hello;
+  }
+
+  
 
   void printHello() {
     switch (HelloLevel) {
@@ -38,7 +43,8 @@ class Hello_Two {
 
 void main(List<String> args) {
   var hello = HelloWorld();
-  var control = Hello_Two(0);
+  var control = Hello_Two();
+  control.HelloLevel = 1;
   print('Default class value: ${hello.defaultClassValue}');
   print('Default class value: ${hello.getDoubleOfDefaultValue()}');
   print('Hello_Two:');
